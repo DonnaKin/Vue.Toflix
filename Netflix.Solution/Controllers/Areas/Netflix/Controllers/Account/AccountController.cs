@@ -6,6 +6,10 @@ using Netflix.Solution.Controllers.Areas.Netflix.Models.Common;
 using Netflix.Solution.Controllers.Areas.Netflix.Services.Account;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
+using Newtonsoft.Json;
+using System.Text;
+using System.Linq;
 
 namespace Netflix.Solution.Controllers.Areas.Netflix.Controllers.Account
 {
@@ -25,7 +29,8 @@ namespace Netflix.Solution.Controllers.Areas.Netflix.Controllers.Account
                 var claims = new List<Claim>
                 {
                     new (ClaimTypes.Sid, result.Data.Uid),
-                    new (ClaimTypes.DateOfBirth, result.Data.Birth),
+                    new ("Password", result.Data.PassWord),
+                    new (ClaimTypes.DateOfBirth, result.Data.Birth)
                 };
 
                 var identity = new ClaimsIdentity(claims, "Login");
@@ -34,6 +39,22 @@ namespace Netflix.Solution.Controllers.Areas.Netflix.Controllers.Account
             }
 
             return result;
+        }
+
+        [HttpGet("check")]
+        public async Task<CommonResponse<AuthInfo>> Check()
+        {
+            string cookie = HttpContext.Request.Headers.Cookie;
+            string uid = string.Empty;
+            string password = string.Empty;
+
+            if (!String.IsNullOrEmpty(cookie))
+            {
+                uid = User.FindFirstValue(ClaimTypes.Sid);
+                password = User.Claims.Where(c => c.Type == "Password").Select(c => c.Value).First();
+            }
+
+            return await Login(new LoginParameter() { Uid = uid, Password = password });
         }
     }
 }

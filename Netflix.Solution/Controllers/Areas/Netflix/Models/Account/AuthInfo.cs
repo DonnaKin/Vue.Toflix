@@ -11,8 +11,8 @@ namespace Netflix.Solution.Controllers.Areas.Netflix.Models.Account
         [JsonProperty("birth")]
         public string Birth { get; set; } = string.Empty;
         [JsonProperty("favoriteList")]
-        public IEnumerable<string> FavoriteList = Enumerable.Empty<string>();
+        public IEnumerable<string> FavoriteList { get; set; } = Enumerable.Empty<string>();
         [JsonProperty("watchingList")]
-        public IEnumerable<string> WatchingList = Enumerable.Empty<string>();
+        public IEnumerable<string> WatchingList { get; set; } = Enumerable.Empty<string>();
     }
 }

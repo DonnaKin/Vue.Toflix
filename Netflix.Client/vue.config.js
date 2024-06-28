@@ -8,7 +8,7 @@ module.exports = {
     assetsDir: "assets",
     devServer: {
         proxy: {
-            "^/api": {
+            "/api": {
                 target: url
             },
             "^/assets": {

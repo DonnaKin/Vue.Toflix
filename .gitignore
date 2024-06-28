@@ -5,7 +5,7 @@
 
 # Vue
 .DS_Store
-/src/
+/Netflix.Client/
 node_modules
 /dist
 package-lock.json

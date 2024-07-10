@@ -1,4 +1,5 @@
-const url = "http://localhost:5226";
+// const url = "http://localhost:5226";
+const url = "https://project-vue.tobecon.co.kr";
 
 module.exports = {
     publicPath: process.env.NODE_ENV === "production" ? "/app/" : "/",

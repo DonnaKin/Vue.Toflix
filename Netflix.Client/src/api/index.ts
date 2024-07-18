@@ -4,7 +4,7 @@ import { ref } from 'vue'
 export async function get<T>(config: AxiosRequestConfig): Promise<T> {
   config.url = path(config.url!);
   config.method = 'GET';
-  const response: AxiosResponse<T> = await axios(config); 
+  const response: AxiosResponse<T> = await axios(config);
   return response.data;
 }
 
@@ -13,10 +13,10 @@ export async function post<T>(config: AxiosRequestConfig): Promise<T> {
   config.method = 'POST';
 
   if (config.data instanceof FormData)
-    config.headers = { "Content-Type" : "multipart/form-data" };
+    config.headers = { "Content-Type": "multipart/form-data" };
   else
-    config.headers = { "Content-Type" : "application/json" };
-  
+    config.headers = { "Content-Type": "application/json" };
+
   const response: AxiosResponse<T> = await axios(config);
   return response.data;
 }

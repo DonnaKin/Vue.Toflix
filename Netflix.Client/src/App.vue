@@ -1,5 +1,7 @@
 <template>
-  <router-view />
+  <div id="wrap">
+    <router-view />
+  </div>
 </template>
 
 <script lang="ts" setup>

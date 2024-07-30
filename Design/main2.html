@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix</title>
+    <link rel="icon" href="image/nficon2023.ico">
+    <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+    <div id="wrap">
+        <header id="header">
+            <h1 id="logo">
+                <a href="#">NETFLIX</a>
+            </h1>
+            <div class="left_nav">
+                <ul>
+                    <li><a href="#">홈</a></li>
+                    <li><a href="#">시리즈</a></li>
+                    <li><a href="#">영화</a></li>
+                    <li><a href="#">내가 찜한 리스트</a></li>
+                </ul>
+            </div>
+            <div class="right_nav">
+                <div class="search_box">
+                    <input type="text" id="search" placeholder="제목, 사람, 장르" autocomplete="off">
+                    <label for="search">
+                        <span class="icon_search"></span>
+                    </label>
+                </div>
+                <div class="user_box">
+                    <span class="profile"><img src="./image/img_profile.png" alt="프로필"></span>
+                    <div class="drop_menu">
+                        <div class="link_box">
+                            <a href="#">로그아웃</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div id="container">
+            <section>
+                <!-- 검색 결과 없을 때 .hide -->
+                <div class="none_data_box hide">
+                    <div class="text">
+                        입력하신 검색어 ' <em class="keyword">검색어</em> '(와)과 일치하는 결과가 없습니다.
+                    </div>
+                </div>
+                <!-- 검색 결과 (컨텐츠 목록 - 목록형) .hide -->
+                <div class="contents_list_box hide">
+                    <h3 class="contents_title">' <em class="keyword">검색어</em> '와 관련된 컨텐츠</h3>
+                    <div class="list_wrap type_list">
+                        <ul>
+                            <li class="item">
+                                <a href="#">
+                                    <img src="./image/img_movie_01.jpg" alt="기묘한이야기">
+                                </a>
+                            </li>
+                            <li class="item">
+                                <a href="#">
+                                    <img src="./image/img_movie_01.jpg" alt="기묘한이야기">
+                                </a>
+                            </li>
+                            <li class="item">
+                                <a href="#">
+                                    <img src="./image/img_movie_01.jpg" alt="기묘한이야기">
+                                </a>
+                            </li>
+                            <li class="item">
+                                <a href="#">
+                                    <img src="./image/img_movie_01.jpg" alt="기묘한이야기">
+                                </a>
+                            </li>
+                            <li class="item">
+                                <a href="#">
+                                    <img src="./image/img_movie_01.jpg" alt="기묘한이야기">
+                                </a>
+                            </li>
+                            <li class="item">
+                                <a href="#">
+                                    <img src="./image/img_movie_01.jpg" alt="기묘한이야기">
+                                </a>
+                            </li>
+                            <li class="item">
+                                <a href="#">
+                                    <img src="./image/img_movie_01.jpg" alt="기묘한이야기">
+                                </a>
+                            </li>
+                            <li class="item">
+                                <a href="#">
+                                    <img src="./image/img_movie_01.jpg" alt="기묘한이야기">
+                                </a>
+                            </li>
+                            <li class="item">
+                                <a href="#">
+                                    <img src="./image/img_movie_01.jpg" alt="기묘한이야기">
+                                </a>
+                            </li>
+                            <li class="item">
+                                <a href="#">
+                                    <img src="./image/img_movie_01.jpg" alt="기묘한이야기">
+                                </a>
+                            </li>
+                            <li class="item">
+                                <a href="#">
+                                    <img src="./image/img_movie_01.jpg" alt="기묘한이야기">
+                                </a>
+                            </li>
+                            <li class="item">
+                                <a href="#">
+                                    <img src="./image/img_movie_01.jpg" alt="기묘한이야기">
+                                </a>
+                            </li>
+                            <li class="item">
+                                <a href="#">
+                                    <img src="./image/img_movie_01.jpg" alt="기묘한이야기">
+                                </a>
+                            </li>
+                            <li class="item">
+                                <a href="#">
+                                    <img src="./image/img_movie_01.jpg" alt="기묘한이야기">
+                                </a>
+                            </li>
+                            <li class="item">
+                                <a href="#">
+                                    <img src="./image/img_movie_01.jpg" alt="기묘한이야기">
+                                </a>
+                            </li>
+                            <li class="item">
+                                <a href="#">
+                                    <img src="./image/img_movie_01.jpg" alt="기묘한이야기">
+                                </a>
+                            </li>
+                            <li class="item">
+                                <a href="#">
+                                    <img src="./image/img_movie_01.jpg" alt="기묘한이야기">
+                                </a>
+                            </li>
+                            <li class="item">
+                                <a href="#">
+                                    <img src="./image/img_movie_01.jpg" alt="기묘한이야기">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 메인 비주얼 -->
+                <div class="main_visual">
+                    <div class="img_box">
+                        <img src="./image/img_visual.jpg" alt="기묘한 이야기">
+                    </div>
+                    <div class="text_box">
+                        <h2 class="title">기묘한 이야기</h2>
+                        <p class="desc">친구네 집에서 자신의 집으로 돌아가던 중 윌은 무언가 이상한 것을 보게 되고, 윌이 있는 곳에서 가까운 정부의 비밀 실험실에서는 끔찍한 일이 벌어진다.</p>
+                        <div class="btn_box">
+                            <button type="button" class=""></button>
+                        </div>
+                    </div>
+                </div>
+                <!-- 컨텐츠 목록 - 슬라이더형 -->
+                <div class="contents_list_box">
+                    <h3 class="contents_title">시청중인 컨텐츠</h3>
+                    <div class="list_wrap type_slider slider1">
+                        <ul class="swiper-wrapper">
+                            <li class="swiper-slide item">
+                                <a href="#">
+                                    <img src="./image/img_movie_01.jpg" alt="기묘한이야기">
+                                </a>
+                            </li>
+                            <li class="swiper-slide item">
+                                <a href="#">
+                                    <img src="./image/img_movie_01.jpg" alt="기묘한이야기">
+                                </a>
+                            </li>
+                            <li class="swiper-slide item">
+                                <a href="#">
+                                    <img src="./image/img_movie_01.jpg" alt="기묘한이야기">
+                                </a>
+                            </li>
+                            <li class="swiper-slide item">
+                                <a href="#">
+                                    <img src="./image/img_movie_01.jpg" alt="기묘한이야기">
+                                </a>
+                            </li>
+                            <li class="swiper-slide item">
+                                <a href="#">
+                                    <img src="./image/img_movie_01.jpg" alt="기묘한이야기">
+                                </a>
+                            </li>
+                            <li class="swiper-slide item">
+                                <a href="#">
+                                    <img src="./image/img_movie_01.jpg" alt="기묘한이야기">
+                                </a>
+                            </li>
+                            <li class="swiper-slide item">
+                                <a href="#">
+                                    <img src="./image/img_movie_01.jpg" alt="기묘한이야기">
+                                </a>
+                            </li>
+                            <li class="swiper-slide item">
+                                <a href="#">
+                                    <img src="./image/img_movie_01.jpg" alt="기묘한이야기">
+                                </a>
+                            </li>
+                            <li class="swiper-slide item">
+                                <a href="#">
+                                    <img src="./image/img_movie_01.jpg" alt="기묘한이야기">
+                                </a>
+                            </li>
+                            <li class="swiper-slide item">
+                                <a href="#">
+                                    <img src="./image/img_movie_01.jpg" alt="기묘한이야기">
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="btn_nav btn_next"></div>
+                        <div class="btn_nav btn_prev"></div>
+                    </div>
+                </div>
+                <!-- 컨텐츠 목록 - 슬라이더형 -->
+                <div class="contents_list_box">
+                    <h3 class="contents_title">추천 컨텐츠</h3>
+                    <div class="list_wrap type_slider slider2">
+                        <ul class="swiper-wrapper">
+                            <li class="swiper-slide item">
+                                <a href="#">
+                                    <img src="./image/img_movie_01.jpg" alt="기묘한이야기">
+                                </a>
+                            </li>
+                            <li class="swiper-slide item">
+                                <a href="#">
+                                    <img src="./image/img_movie_01.jpg" alt="기묘한이야기">
+                                </a>
+                            </li>
+                            <li class="swiper-slide item">
+                                <a href="#">
+                                    <img src="./image/img_movie_01.jpg" alt="기묘한이야기">
+                                </a>
+                            </li>
+                            <li class="swiper-slide item">
+                                <a href="#">
+                                    <img src="./image/img_movie_01.jpg" alt="기묘한이야기">
+                                </a>
+                            </li>
+                            <li class="swiper-slide item">
+                                <a href="#">
+                                    <img src="./image/img_movie_01.jpg" alt="기묘한이야기">
+                                </a>
+                            </li>
+                            <li class="swiper-slide item">
+                                <a href="#">
+                                    <img src="./image/img_movie_01.jpg" alt="기묘한이야기">
+                                </a>
+                            </li>
+                            <li class="swiper-slide item">
+                                <a href="#">
+                                    <img src="./image/img_movie_01.jpg" alt="기묘한이야기">
+                                </a>
+                            </li>
+                            <li class="swiper-slide item">
+                                <a href="#">
+                                    <img src="./image/img_movie_01.jpg" alt="기묘한이야기">
+                                </a>
+                            </li>
+                            <li class="swiper-slide item">
+                                <a href="#">
+                                    <img src="./image/img_movie_01.jpg" alt="기묘한이야기">
+                                </a>
+                            </li>
+                            <li class="swiper-slide item">
+                                <a href="#">
+                                    <img src="./image/img_movie_01.jpg" alt="기묘한이야기">
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="btn_nav btn_next"></div>
+                        <div class="btn_nav btn_prev"></div>
+                    </div>
+                </div>
+                <!-- 컨텐츠 목록 - 슬라이더형 -->
+                <div class="contents_list_box">
+                    <h3 class="contents_title">인기 컨텐츠</h3>
+                    <div class="list_wrap type_slider slider3">
+                        <ul class="swiper-wrapper">
+                            <li class="swiper-slide item">
+                                <a href="#">
+                                    <img src="./image/img_movie_01.jpg" alt="기묘한이야기">
+                                </a>
+                            </li>
+                            <li class="swiper-slide item">
+                                <a href="#">
+                                    <img src="./image/img_movie_01.jpg" alt="기묘한이야기">
+                                </a>
+                            </li>
+                            <li class="swiper-slide item">
+                                <a href="#">
+                                    <img src="./image/img_movie_01.jpg" alt="기묘한이야기">
+                                </a>
+                            </li>
+                            <li class="swiper-slide item">
+                                <a href="#">
+                                    <img src="./image/img_movie_01.jpg" alt="기묘한이야기">
+                                </a>
+                            </li>
+                            <li class="swiper-slide item">
+                                <a href="#">
+                                    <img src="./image/img_movie_01.jpg" alt="기묘한이야기">
+                                </a>
+                            </li>
+                            <li class="swiper-slide item">
+                                <a href="#">
+                                    <img src="./image/img_movie_01.jpg" alt="기묘한이야기">
+                                </a>
+                            </li>
+                            <li class="swiper-slide item">
+                                <a href="#">
+                                    <img src="./image/img_movie_01.jpg" alt="기묘한이야기">
+                                </a>
+                            </li>
+                            <li class="swiper-slide item">
+                                <a href="#">
+                                    <img src="./image/img_movie_01.jpg" alt="기묘한이야기">
+                                </a>
+                            </li>
+                            <li class="swiper-slide item">
+                                <a href="#">
+                                    <img src="./image/img_movie_01.jpg" alt="기묘한이야기">
+                                </a>
+                            </li>
+                            <li class="swiper-slide item">
+                                <a href="#">
+                                    <img src="./image/img_movie_01.jpg" alt="기묘한이야기">
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="btn_nav btn_next"></div>
+                        <div class="btn_nav btn_prev"></div>
+                    </div>
+                </div>
+                <!-- 컨텐츠 목록 - 슬라이더형 -->
+                <div class="contents_list_box">
+                    <h3 class="contents_title">내가 찜한 컨텐츠</h3>
+                    <div class="list_wrap type_slider slider4">
+                        <ul class="swiper-wrapper">
+                            <li class="swiper-slide item">
+                                <a href="#">
+                                    <img src="./image/img_movie_01.jpg" alt="기묘한이야기">
+                                </a>
+                            </li>
+                            <li class="swiper-slide item">
+                                <a href="#">
+                                    <img src="./image/img_movie_01.jpg" alt="기묘한이야기">
+                                </a>
+                            </li>
+                            <li class="swiper-slide item">
+                                <a href="#">
+                                    <img src="./image/img_movie_01.jpg" alt="기묘한이야기">
+                                </a>
+                            </li>
+                            <li class="swiper-slide item">
+                                <a href="#">
+                                    <img src="./image/img_movie_01.jpg" alt="기묘한이야기">
+                                </a>
+                            </li>
+                            <li class="swiper-slide item">
+                                <a href="#">
+                                    <img src="./image/img_movie_01.jpg" alt="기묘한이야기">
+                                </a>
+                            </li>
+                            <li class="swiper-slide item">
+                                <a href="#">
+                                    <img src="./image/img_movie_01.jpg" alt="기묘한이야기">
+                                </a>
+                            </li>
+                            <li class="swiper-slide item">
+                                <a href="#">
+                                    <img src="./image/img_movie_01.jpg" alt="기묘한이야기">
+                                </a>
+                            </li>
+                            <li class="swiper-slide item">
+                                <a href="#">
+                                    <img src="./image/img_movie_01.jpg" alt="기묘한이야기">
+                                </a>
+                            </li>
+                            <li class="swiper-slide item">
+                                <a href="#">
+                                    <img src="./image/img_movie_01.jpg" alt="기묘한이야기">
+                                </a>
+                            </li>
+                            <li class="swiper-slide item">
+                                <a href="#">
+                                    <img src="./image/img_movie_01.jpg" alt="기묘한이야기">
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="btn_nav btn_next"></div>
+                        <div class="btn_nav btn_prev"></div>
+                    </div>
+                </div>
+            </section>
+            <!-- 로딩 -->
+            <div id="loading"></div>
+        </div>
+        <footer id="footer">
+            <p class="copy_text">
+                넷플릭스서비시스코리아 유한회사 통신판매업신고번호: 제2018-서울종로-0426호 전화번호: 00-308-321-0161 (수신자 부담)<br>
+                대표: 레지널드 숀 톰프슨<br>
+                이메일 주소: korea@netflix.com<br>
+                주소: 대한민국 서울특별시 종로구 우정국로 26, 센트로폴리스 A동 20층 우편번호 03161<br>
+                사업자등록번호: 165-87-00119<br>
+                클라우드 호스팅: Amazon Web Services Inc.<br>
+                공정거래위원회 웹사이트
+            </p>
+        </footer>
+    </div>
+    <!-- popup -->
+    <div id="popup" class="popup">
+        <div class="popup_wrap">
+            <button type="button" class="btn_close">닫기</button>
+            <div class="preview_img_box">
+                <img src="./image/img_visual.jpg" alt="기묘한 이야기">
+            </div>
+            <div class="preview_info_box">
+                <h2 class="title">기묘한 이야기</h2>
+                <!-- 찜 클릭 시 .active 클래스 추가 -->
+                <button type="button" class="btn_heart">찜</button>
+                <div class="tag_box">
+                    <img src="./image/icon_top_10.png" alt="TOP10">
+                    <img src="./image/icon_age_all.png" alt="전체 관람가">
+                    <img src="./image/icon_age_12.png" alt="12세 관람가">
+                    <img src="./image/icon_age_15.png" alt="15세 관람가">
+                    <img src="./image/icon_age_19.png" alt="19세 관람가">
+                    <img src="./image/icon_tag_01.png" alt="폭력성">
+                    <img src="./image/icon_tag_02.png" alt="대사">
+                    <img src="./image/icon_tag_03.png" alt="모방위험">
+                    <img src="./image/icon_tag_04.png" alt="약물">
+                    <img src="./image/icon_tag_05.png" alt="주제">
+                    <img src="./image/icon_tag_06.png" alt="공포">
+                </div>
+                <p class="desc">친구네 집에서 자신의 집으로 돌아가던 중 윌은 무언가 이상한 것을 보게 되고, 윌이 있는 곳에서 가까운 정부의 비밀 실험실에서는 끔찍한 일이 벌어진다.</p>
+                <div class="detail">
+                    <ul>
+                        <li>
+                            <span>출연 : </span>
+                            위노나 라이더, 데이비드 하버, 밀리 바비 브라운, 핀 울프하드, 게이튼 마타라조, 케일럽 맥러플린, 노아 슈냅, 세이디 싱크, 너탈리아 다이어
+                        </li>
+                        <li>
+                            <span>장르 : </span>
+                            SF 시리즈, 청소년 시리지, 미국 TV 프로그램, 호러 시리즈
+                        </li>
+                        <li>
+                            <span>시리즈 특징 : </span>
+                            향수 자극, 불길한, 무서운
+                        </li>
+                        <li>
+                            <span>감독 : </span>
+                            더퍼형제
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        // 전체 슬라이더 초기화
+        function initializeAllSwipers() {
+            // 슬라이더 찾기
+            document.querySelectorAll('[class*="slider"]').forEach(function(slider) {
+                // .slider + i
+                let sliderClass = Array.from(slider.classList).find(cls => /^slider\d$/.test(cls));
+                
+                if (sliderClass) {
+                    let nextBtnClass = `.${sliderClass} .btn_next`;
+                    let prevBtnClass = `.${sliderClass} .btn_prev`;
+                    
+                    // swiper
+                    new Swiper(`.${sliderClass}`, {
+                        slidesPerView: 5, // 한 번에 보여줄 슬라이드 수
+                        spaceBetween: 8, // 슬라이드 사이의 간격
+                        slidesPerGroup: 5, // 한 번에 넘어가는 슬라이드 수
+                        loop: true, // 무한 루프
+                        speed: 700, // 속도 0.7초
+                        navigation: {
+                            nextEl: nextBtnClass, // 다음 버튼
+                            prevEl: prevBtnClass, // 이전 버튼
+                        },
+                    });
+                }
+            });
+        }
+
+        // 전체 슬라이더를 초기화하는 함수를 DOMContentLoaded 이벤트가 발생하면 호출
+        document.addEventListener('DOMContentLoaded', initializeAllSwipers);
+    </script>
+</body>
+</html>

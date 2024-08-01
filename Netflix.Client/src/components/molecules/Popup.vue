@@ -1,9 +1,11 @@
 <template>
   <Teleport to="#modalLayout">
     <!-- popup -->
-    <div id="popup" class="popup" v-show="true">
+    <div id="popup" class="popup" v-show="isShow">
       <div class="popup_wrap">
-        <button type="button" class="btn_close">닫기</button>
+        <button type="button" class="btn_close" @click="closePopup">
+          닫기
+        </button>
         <div class="preview_img_box">
           <img src="/assets/image/img_visual.jpg" alt="기묘한 이야기" />
         </div>
@@ -57,4 +59,16 @@
   </Teleport>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { DefineProps, toRefs } from "vue";
+
+const props = withDefaults(defineProps<{ isShow: boolean }>(), {
+  isShow: true,
+});
+
+const { isShow } = toRefs(props);
+
+function closePopup() {
+  isShow.value = false;
+}
+</script>

@@ -10,7 +10,7 @@
               type="text"
               id="id"
               class="form_input valid error"
-              value="test@tobecon.net"
+              v-model="uid"
             />
             <label for="id">이메일 주소 또는 휴대폰 번호</label>
             <div class="error_message">
@@ -18,11 +18,18 @@
             </div>
           </div>
           <div class="form_floating">
-            <input type="password" id="password" class="form_input" />
+            <input
+              type="password"
+              id="password"
+              class="form_input"
+              v-model="password"
+            />
             <label for="password">비밀번호</label>
             <div class="error_message">비밀번호는 4~60자 사이여야 합니다.</div>
           </div>
-          <button type="submit" class="btn btn_primary">로그인</button>
+          <button type="button" class="btn btn_primary" @click="Login">
+            로그인
+          </button>
           <div class="form_check">
             <input type="checkbox" id="saveCheck" />
             <label for="saveCheck">로그인 정보 저장</label>
@@ -33,4 +40,40 @@
   </div>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { reactive, ref } from "vue";
+import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
+
+const uid = ref<string>("");
+const password = ref<string>("");
+
+async function Login() {
+  // api 호출 (api 호출은 async로 동작해야함)
+  const config = reactive<AxiosRequestConfig>(Object.create(null));
+  config.url = "/netflix/api/account/login";
+  config.method = "POST";
+  config.headers = {
+    "Content-Type": "application/json;charset=utf-8",
+  };
+
+  // 로그인 데이터 객체
+  const loginParam = reactive<LoginParameter>(Object.create(null));
+  loginParam.uid = uid.value;
+  loginParam.password = password.value;
+
+  config.data = loginParam;
+
+  // api 호출
+  await axios(config)
+    .then((res: AxiosResponse) => {
+      console.log(res);
+      console.log(res.data);
+    })
+    .catch((err: Error) => {
+      console.log("error: " + err);
+    })
+    .finally(() => {
+      console.log("finally");
+    });
+}
+</script>

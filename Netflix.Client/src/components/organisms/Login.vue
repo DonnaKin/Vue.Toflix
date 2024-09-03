@@ -41,11 +41,17 @@
 </template>
 
 <script lang="ts" setup>
-import { reactive, ref } from "vue";
+import { onMounted, reactive, ref } from "vue";
 import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
+import { useRouter } from "vue-router";
+import { LoginResult, Temp } from "@/store";
 
 const uid = ref<string>("");
 const password = ref<string>("");
+
+const router = useRouter();
+
+const loginResult = LoginResult();
 
 async function Login() {
   // api 호출 (api 호출은 async로 동작해야함)
@@ -65,9 +71,18 @@ async function Login() {
 
   // api 호출
   await axios(config)
-    .then((res: AxiosResponse) => {
+    .then((res: AxiosResponse<LoginResult>) => {
       console.log(res);
-      console.log(res.data);
+      if (res.data.errorCode == "0000") {
+        // 로그인 정보를 생성
+        // todo: 로그인 정보를 저장한다.
+        loginResult.login.data = res.data.data;
+        console.log("loginResult : " + loginResult.login.data.watchingList);
+
+        router.push({
+          name: "home",
+        });
+      }
     })
     .catch((err: Error) => {
       console.log("error: " + err);

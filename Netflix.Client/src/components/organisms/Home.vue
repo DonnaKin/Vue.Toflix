@@ -18,6 +18,7 @@ import Search from "@/components/molecules/Search.vue";
 import MainVisual from "@/components/molecules/MainVisual.vue";
 import Contents from "@/components/molecules/Contents.vue";
 import Footer from "@/components/organisms/Footer.vue";
+
 /***********************************************************************************************************/
 /*                                               D A T A                                                   */
 /***********************************************************************************************************/

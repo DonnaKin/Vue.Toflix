@@ -26,4 +26,24 @@ declare global {
     favoriteList: string[];
     watchingList: string[];
   }
+
+  export interface List {
+    result: string;
+    errorCode: string;
+    errorMessage: string;
+    data: ListData[];
+  }
+
+  export interface ListData {
+    code: string;
+    category: string;
+    title: string;
+    description: string;
+    limitAge: number;
+    genre: string;
+    mainImg: string;
+    summaryImg: string;
+    isTop: boolean;
+    isRecommend: boolean;
+  }
 }

@@ -16,4 +16,10 @@
       </div>
     </div>
   </div>
+  <Contents :index="1" />
+  <Contents :index="2" />
 </template>
+
+<script lang="ts" setup>
+import Contents from "@/components/molecules/Contents.vue";
+</script>

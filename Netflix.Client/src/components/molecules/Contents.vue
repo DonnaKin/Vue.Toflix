@@ -1,34 +1,65 @@
 <template>
   <div class="contents_list_box">
     <h3 class="contents_title">시청중인 컨텐츠</h3>
-    <div class="list_wrap type_slider slider1">
-      <ul class="swiper-wrapper">
-        <li
-          class="swiper-slide item"
-          v-for="(data, index) in watchingList"
-          :key="index"
-        >
-          <a @click="imgClick">
-            <img :src="data.mainImg" :alt="data.title" />
+    <div :class="`list_wrap type_slider slider${index}`">
+      <Swiper
+        :slidesPerView="5"
+        :slidesPerGroup="5"
+        :spaceBetween="8"
+        :loop="true"
+        :speed="700"
+        :modules="[Navigation]"
+        :navigation="{
+          nextEl: `.slider${index} .btn_next`,
+          prevEl: `.slider${index} .btn_prev`,
+        }"
+      >
+        <SwiperSlide class="item">
+          <a href="#">
+            <img src="/assets/image/img_movie_01.jpg" alt="기묘한이야기" />
           </a>
-        </li>
-      </ul>
-      <div class="btn_nav btn_next"></div>
-      <div class="btn_nav btn_prev"></div>
-    </div>
-    <h3 class="contents_title">내가 찜한 컨텐츠</h3>
-    <div class="list_wrap type_slider slider1">
-      <ul class="swiper-wrapper">
-        <li
-          class="swiper-slide item"
-          v-for="(data, index) in favoriteList"
-          :key="index"
-        >
-          <a @click="imgClick">
-            <img :src="data.mainImg" :alt="data.title" />
+        </SwiperSlide>
+        <SwiperSlide class="item">
+          <a href="#">
+            <img src="/assets/image/img_movie_01.jpg" alt="기묘한이야기" />
           </a>
-        </li>
-      </ul>
+        </SwiperSlide>
+        <SwiperSlide class="item">
+          <a href="#">
+            <img src="/assets/image/img_movie_01.jpg" alt="기묘한이야기" />
+          </a>
+        </SwiperSlide>
+        <SwiperSlide class="item">
+          <a href="#">
+            <img src="/assets/image/img_movie_01.jpg" alt="기묘한이야기" />
+          </a>
+        </SwiperSlide>
+        <SwiperSlide class="item">
+          <a href="#">
+            <img src="/assets/image/img_movie_01.jpg" alt="기묘한이야기" />
+          </a>
+        </SwiperSlide>
+        <SwiperSlide class="item">
+          <a href="#">
+            <img src="/assets/image/img_movie_01.jpg" alt="기묘한이야기" />
+          </a>
+        </SwiperSlide>
+        <SwiperSlide class="item">
+          <a href="#">
+            <img src="/assets/image/img_movie_01.jpg" alt="기묘한이야기" />
+          </a>
+        </SwiperSlide>
+        <SwiperSlide class="item">
+          <a href="#">
+            <img src="/assets/image/img_movie_01.jpg" alt="기묘한이야기" />
+          </a>
+        </SwiperSlide>
+        <SwiperSlide class="item">
+          <a href="#">
+            <img src="/assets/image/img_movie_01.jpg" alt="기묘한이야기" />
+          </a>
+        </SwiperSlide>
+      </Swiper>
       <div class="btn_nav btn_next"></div>
       <div class="btn_nav btn_prev"></div>
     </div>
@@ -44,6 +75,9 @@ import Popup from "@/components/molecules/Popup.vue";
 import { reactive, ref, onMounted } from "vue";
 import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
 import { LoginResult } from "@/store";
+import { Swiper, SwiperSlide } from "swiper/vue";
+import { Navigation } from "swiper/modules";
+import { defineProps, toRefs } from "vue";
 /***********************************************************************************************************/
 /*                                               D A T A                                                   */
 /***********************************************************************************************************/
@@ -52,6 +86,8 @@ const contents = reactive<ListData[]>([]);
 const seriesList = reactive<ListData[]>([]);
 const watchingList = reactive<ListData[]>([]);
 const favoriteList = reactive<ListData[]>([]);
+const props = withDefaults(defineProps<{ index: number }>(), { index: 1 });
+const { index } = toRefs(props);
 /***********************************************************************************************************/
 /*                                            C O M P U T E D                                              */
 /***********************************************************************************************************/

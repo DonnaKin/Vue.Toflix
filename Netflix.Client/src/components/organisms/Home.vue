@@ -4,7 +4,6 @@
     <section>
       <Search />
       <MainVisual />
-      <Contents />
     </section>
   </div>
   <Footer />
@@ -16,7 +15,6 @@
 import Header from "@/components/organisms/Header.vue";
 import Search from "@/components/molecules/Search.vue";
 import MainVisual from "@/components/molecules/MainVisual.vue";
-import Contents from "@/components/molecules/Contents.vue";
 import Footer from "@/components/organisms/Footer.vue";
 
 /***********************************************************************************************************/
